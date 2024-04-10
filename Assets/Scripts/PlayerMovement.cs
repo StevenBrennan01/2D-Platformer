@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isMoving;
 
-
     private void Awake()
     {
         isGrounded = GetComponent<isGrounded>(); //POPULATE SCRIPTS HERE
@@ -58,5 +57,4 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     #endregion
-
 }
