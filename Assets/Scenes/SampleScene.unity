@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 133395274}
   - component: {fileID: 133395276}
   - component: {fileID: 133395275}
-  - component: {fileID: 133395278}
   - component: {fileID: 133395279}
   m_Layer: 3
   m_Name: Terrain
@@ -3567,33 +3566,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!50 &133395278
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133395273}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!19719996 &133395279
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -3657,7 +3629,7 @@ Transform:
   m_GameObject: {fileID: 213577799}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32605,6 +32577,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7087562575396327671, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
   m_PrefabInstance: {fileID: 1387118361131676354}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &377263088 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8988387425867702487, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+  m_PrefabInstance: {fileID: 1387118361131676354}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 441f6c89f8756b64cbef248f20efe8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &477103130
 GameObject:
   m_ObjectHideFlags: 0
@@ -33327,6 +33310,94 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_Actions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 501fc5a3b9f32cd4cb798ffa66ef2d55, type: 3}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_NotificationBehavior
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
+      value: 40223501-bf15-4e3e-a5f6-d599198d02ce
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: 39030efe-fa12-4938-8bc5-216a33f5ccbf
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
+      value: Player/Moving[/Keyboard/a,/Keyboard/d]
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: Player/Jumping[/Keyboard/space]
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 377263088}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 377263088}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Moving
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158423938828820593, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7087562575396327671, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.34
@@ -33366,6 +33437,10 @@ PrefabInstance:
     - target: {fileID: 7087562575396327671, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8988387425867702487, guid: a3f0ab3568c05fc4ebca3e369cd60bcf, type: 3}
+      propertyPath: moveSpeed
+      value: 5.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

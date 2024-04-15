@@ -7,54 +7,58 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb => GetComponent<Rigidbody2D>();
+    private PlayerInput playerInput;
+    private InputActions inputActions;
+
     [SerializeField] private float jumpForce = 10f;
-    [SerializeField] private float inputValue = 5f;
+    [SerializeField] private float moveSpeed = 3f;
+    private float horizontal = Input.GetAxis("Horizontal");
 
     isGrounded isGrounded;
-    InputActions inputActions;
 
     private bool isMoving;
+    private bool facingRight;
 
     private void Awake()
     {
-        isGrounded = GetComponent<isGrounded>(); //POPULATE SCRIPTS HERE
-        
+        isGrounded = GetComponent<isGrounded>();
+        playerInput = GetComponent<PlayerInput>();
+
         inputActions = new InputActions();
-        inputActions.Player.Enable();
-
-        inputActions.Player.Moving.performed += Moving;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        //Moving(); //working on refactoring to new input system
-        Jumping();
-    }
+        rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y); //using velocity for movement
 
-    private void Moving(InputAction.CallbackContext value)
-    {
-        isMoving = true;
-
-    }
-
-    #region OldInputMoving
-    //private void Moving()
-    //{
-    //    float dirX = Input.GetAxis/*raw*/("Horizontal");
-    //    rb.velocity = new Vector2(dirX * 7f, rb.velocity.y);
-    //}
-    #endregion
-
-    #region OldInputJumping
-    private void Jumping()
-    {
-        if (isGrounded.playerGrounded)
+        if (facingRight && horizontal > 0f)
         {
-            if (Input.GetButtonDown("Jump"))
-            {
-                rb.AddForce(new Vector2(rb.velocity.x, jumpForce), ForceMode2D.Impulse);
-            }   
+            Flip();
+        }
+        if (!facingRight && horizontal < 0f) 
+        {
+            Flip();
         }
     }
-    #endregion
+
+    public void Moving(InputAction.CallbackContext value)
+    {
+        horizontal = value.ReadValue<Vector2>().x; //doesn't need to be checked if performed
+    }
+
+    public void Jump(InputAction.CallbackContext button)
+    {
+        if (button.performed && isGrounded.playerGrounded)
+        {
+            rb.AddForce(new Vector2(rb.velocity.x, jumpForce), ForceMode2D.Impulse); //not using velocity for jump, more ideal
+        }
+    }
+
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1f;
+        transform.localScale = localScale;
+    }
 }
