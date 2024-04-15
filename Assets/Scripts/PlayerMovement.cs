@@ -10,11 +10,11 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInput playerInput;
     private InputActions inputActions;
 
+    isGrounded isGrounded;
+
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private float moveSpeed = 3f;
     private float horizontal = Input.GetAxis("Horizontal");
-
-    isGrounded isGrounded;
 
     private bool isMoving;
     private bool facingRight;
@@ -50,14 +50,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (button.performed && isGrounded.playerGrounded)
         {
-            rb.AddForce(new Vector2(rb.velocity.x, jumpForce), ForceMode2D.Impulse); //not using velocity for jump, more ideal
+            rb.AddForce(new Vector2(rb.velocity.x, jumpForce), ForceMode2D.Impulse); //not using velocity for jump, force more ideal
         }
     }
 
     private void Flip()
     {
         facingRight = !facingRight;
-        Vector3 localScale = transform.localScale;
+        Vector2 localScale = transform.localScale;
         localScale.x *= -1f;
         transform.localScale = localScale;
     }
