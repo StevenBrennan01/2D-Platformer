@@ -5,7 +5,7 @@ using UnityEngine;
 public class itemCollect : MonoBehaviour
 {
 
-    //could add code here to make sure the player is the one touching
+    //could add code to identify player
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

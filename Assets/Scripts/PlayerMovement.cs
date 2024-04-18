@@ -7,9 +7,9 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb => GetComponent<Rigidbody2D>();
+
     private PlayerInput playerInput;
     private InputActions inputActions;
-
     isGrounded isGrounded;
 
     [SerializeField] private float jumpForce = 10f;
@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (button.performed && isGrounded.playerGrounded)
         {
-            rb.AddForce(new Vector2(rb.velocity.x, jumpForce), ForceMode2D.Impulse); //not using velocity for jump, force more ideal
+            rb.AddForce(new Vector2(rb.velocity.x, jumpForce), ForceMode2D.Impulse);
         }
     }
 
